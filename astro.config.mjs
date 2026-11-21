@@ -140,6 +140,11 @@ export default defineConfig({
 			updateHead: true,
 			updateBodyClass: false,
 			globalInstance: true,
+			// Desktop pages and the legacy layout use different navigation containers.
+			ignore: (url) =>
+				document.documentElement.hasAttribute("data-desktop") ||
+				url.split(/[?#]/, 1)[0] === "/" ||
+				url.startsWith("/posts/"),
 			// 滚动相关配置优化
 			resolveUrl: (url) => url,
 			animateHistoryBrowsing: false,

@@ -1,0 +1,62 @@
+---
+
+import '@fontsource/zen-kaku-gothic-new/400.css';
+import '@fontsource/zen-kaku-gothic-new/500.css';
+import '@fontsource/zen-kaku-gothic-new/700.css';
+import '@fontsource-variable/roboto-mono';
+import '@fontsource-variable/noto-sans-sc';
+import '../styles/desktop.css';
+import '../styles/windows.css';
+import '../styles/article.css';
+import '../styles/responsive.css';
+import '../styles/prototype.css';
+
+interface Props {
+  title: string;
+  description: string;
+  article?: boolean;
+  lang?: string;
+  image?: string;
+}
+
+const { title, description, article = false, image, lang = "en" } = Astro.props;
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astro.url;
+const themeHue = 45;
+---
+
+<!doctype html>
+<html lang={lang} data-desktop data-lights="on" style={`--hue: ${themeHue}`}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#FFFFFF" />
+    <link rel="icon" type="image/svg+xml" href="/assets/desktop/sun.svg" />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={article ? "article" : "website"} />
+    <meta property="og:url" content={canonical} />
+    {image && <meta property="og:image" content={image} />}
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml" />
+    <slot name="head" />
+    <title>{title}</title>
+    <script is:inline>
+      (() => {
+        try {
+          const lights = localStorage.getItem('firefly.lightsOn');
+          const language = localStorage.getItem('firefly.language');
+          document.documentElement.dataset.lights = lights === 'false' ? 'off' : 'on';
+          document.documentElement.lang = language === 'zh-CN' ? 'zh-CN' : 'en';
+        } catch {
+          document.documentElement.dataset.lights = 'on';
+          document.documentElement.lang = 'en';
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

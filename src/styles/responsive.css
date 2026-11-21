@@ -1,0 +1,287 @@
+@media (max-width: 720px) {
+  .desktop {
+    place-items: start center;
+    min-height: 100dvh;
+    padding: 140px 16px 176px;
+  }
+
+  .control-button {
+    width: 46px;
+    height: 46px;
+  }
+
+  .language-select select {
+    min-width: 118px;
+    min-height: 46px;
+    padding-left: 11px;
+    font-size: 12px;
+  }
+
+  .home-window {
+    margin-top: 32px;
+    border-radius: 16px 13px 18px 14px;
+  }
+
+  .home-titlebar {
+    gap: 8px;
+    min-height: 46px;
+    padding: 9px 13px;
+    font-size: 12px;
+  }
+
+  .home-content {
+    padding: 30px 18px 22px;
+  }
+
+  .home-copy {
+    padding-left: 0;
+  }
+
+  .home-hello {
+    font-size: 12px;
+  }
+
+  .home-copy h1 {
+    font-size: clamp(44px, 14vw, 58px);
+  }
+
+  .home-subtitle {
+    margin-top: 10px;
+    font-size: 17px;
+  }
+
+  .desktop-icons {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 24px;
+  }
+
+  .desktop-icon {
+    min-height: 104px;
+    padding-bottom: 5px;
+    font-size: 12px;
+  }
+
+  .desktop-icon img {
+    width: 68px;
+    height: 68px;
+  }
+
+  .desktop-window {
+    top: 76px !important;
+    right: 12px;
+    left: 12px !important;
+    width: calc(100vw - 24px) !important;
+    height: calc(100dvh - 204px) !important;
+    max-width: none;
+    max-height: none;
+    border-radius: 14px 12px 16px 12px;
+  }
+
+  .window-titlebar {
+    flex-basis: 54px;
+    cursor: default;
+    touch-action: auto;
+  }
+
+  .window-titlebar h2 {
+    font-size: 13px;
+  }
+
+  .window-close {
+    flex-basis: 46px;
+    width: 46px;
+    height: 46px;
+  }
+
+  .window-body {
+    padding: 20px;
+  }
+
+  .about-layout {
+    grid-template-columns: 108px minmax(0, 1fr);
+    gap: 17px;
+    align-items: start;
+  }
+
+  .avatar-wrap img {
+    width: 108px;
+    height: 108px;
+  }
+
+  .about-copy h3 {
+    margin-bottom: 8px;
+    font-size: 26px;
+  }
+
+  .about-copy p {
+    font-size: 14px;
+  }
+
+  .article-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .corgi-player {
+    right: 16px;
+    bottom: 28px;
+    width: 116px;
+  }
+
+  .music-status {
+    right: -4px;
+    bottom: -8px;
+    max-width: 145px;
+    padding: 3px 7px;
+    font-size: 12px;
+  }
+
+  .has-open-windows .corgi-player {
+    width: 88px;
+    bottom: 26px;
+  }
+
+  .has-open-windows .music-status {
+    display: none;
+  }
+
+  .desktop-footer {
+    bottom: 24px;
+    left: 16px;
+    max-width: 54%;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .article-page {
+    padding: 10px;
+  }
+
+  .article-window {
+    min-height: calc(100dvh - 20px);
+    border-radius: 14px 12px 16px 12px;
+  }
+
+  .article-titlebar {
+    grid-template-columns: 44px minmax(0, 1fr) auto;
+    gap: 8px;
+    min-height: 62px;
+    padding: 7px;
+  }
+
+  .article-home,
+  .article-close {
+    width: 44px;
+    height: 44px;
+  }
+
+  .article-window-title {
+    font-size: 12px;
+  }
+
+  .article-actions {
+    gap: 7px;
+  }
+
+  .article-actions .language-select select {
+    min-width: 102px;
+    min-height: 44px;
+    padding: 6px 24px 6px 9px;
+  }
+
+  .article-content {
+    padding: 34px 21px 58px;
+  }
+
+  .article-header h1 {
+    font-size: clamp(32px, 10vw, 44px);
+  }
+
+  .article-description,
+  .article-prose {
+    font-size: 16px;
+  }
+
+  .article-prose {
+    line-height: 1.8;
+  }
+
+  .article-prose h2 {
+    font-size: 26px;
+  }
+
+  .article-prose pre {
+    padding: 15px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 420px) {
+  .desktop-controls {
+    gap: 7px;
+  }
+
+  .control-button {
+    width: 44px;
+    height: 44px;
+  }
+
+  .language-select select {
+    min-width: 106px;
+    min-height: 44px;
+  }
+
+  .home-content {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .desktop-icons {
+    gap: 5px;
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .avatar-wrap {
+    text-align: left;
+  }
+
+  .about-copy p {
+    font-size: 16px;
+  }
+
+  .article-titlebar {
+    grid-template-columns: 44px minmax(0, 1fr) auto;
+  }
+
+  .article-window-title {
+    display: none;
+  }
+
+  .article-actions {
+    grid-column: 3;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .music-note,
+  .desktop-icon:hover,
+  .desktop-icon:hover img,
+  .account-link:is(:hover, :focus-visible, :active),
+  .article-card:hover .article-cover img {
+    transform: none !important;
+  }
+}

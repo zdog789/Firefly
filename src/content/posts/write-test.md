@@ -2,7 +2,7 @@
 title: 我的第一篇博客
 published: 2026-11-14
 description: ''
-image: ''
+image: /assets/posts/write-test-cover.png
 tags: []
 category: ''
 draft: false

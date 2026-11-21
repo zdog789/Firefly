@@ -1,0 +1,26 @@
+---
+import DesktopHome from "@/components/desktop/DesktopHome.svelte";
+import { siteConfig as desktopConfig } from "@/config/desktopConfig";
+import { siteConfig } from "@/config/siteConfig";
+import DesktopLayout from "@/layouts/DesktopLayout.astro";
+import { getSortedPosts } from "@/utils/content-utils";
+import { toDesktopArticleSummary } from "@/utils/desktop-posts";
+
+const posts = await getSortedPosts();
+const articles = await Promise.all(posts.map(toDesktopArticleSummary));
+---
+
+<DesktopLayout title={siteConfig.title} description={siteConfig.description || siteConfig.title}>
+  <DesktopHome client:load {articles} />
+  <noscript>
+    <section class="noscript-panel" aria-label="Basic navigation without JavaScript">
+      <h2>JavaScript is off — the essentials still work.</h2>
+      <ul>
+        {articles.map((article) => <li><a href={article.url}>{article.title}</a></li>)}
+        <li><a href={desktopConfig.github}>GitHub</a></li>
+        <li><a href={desktopConfig.bilibili}>Bilibili</a></li>
+        <li><a href={`mailto:${desktopConfig.email}`}>{desktopConfig.email}</a></li>
+      </ul>
+    </section>
+  </noscript>
+</DesktopLayout>
